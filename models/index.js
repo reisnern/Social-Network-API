@@ -1,4 +1,4 @@
-// require Thoughts snd Users model
+// Require Thoughts snd Users models
 const Thoughts = require('./Thoughts');
 const Users = require('./Users');
 
