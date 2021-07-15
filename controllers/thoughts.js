@@ -96,4 +96,4 @@ deleteReaction({params}, res) {
 };
 
 // Export module 
-module.exports = thoughts.js;
+module.exports = thoughts;

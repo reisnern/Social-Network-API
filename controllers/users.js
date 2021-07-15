@@ -111,4 +111,4 @@ deleteFriend({ params }, res) {
 };
 
 // Export users controller
-module.exports = user.js; 
+module.exports = user; 
