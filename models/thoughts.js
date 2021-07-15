@@ -64,12 +64,12 @@ const ThoughtsSchema = new Schema(
 )
 
 // get total count of reactions
-ThoughtsSchema.virtual('reactionCount').get(function() {
+thoughtsSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
 
 // create the Thoughts model using the Thoughts Schema
-const Thoughts = model('Thoughts', ThoughtsSchema);
+const Thoughts = model('thoughts', thoughtsSchema);
 
 // Export Thoughts Module
 module.exports = thoughts;
