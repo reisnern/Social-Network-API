@@ -1,5 +1,5 @@
 // Require Thoughts snd Users models
-const Thoughts = require('./thoughts');
+const thoughts = require('./thoughts');
 const users = require('./users');
 
 
