@@ -33,7 +33,7 @@ const ReactionsSchema = new Schema(
 );
 
 // ThoughtsSchema
-const ThoughtsSchema = new Schema(
+const thoughtsSchema = new Schema(
     {
     thoughtText: {
         type: String,
