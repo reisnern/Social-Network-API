@@ -2,7 +2,7 @@
 const {thoughts, users} = require('../models');
 
 // Set up  Controller
-const thoughts = {
+const thoughtsfunctions = {
 
     // Create a new thought
     createthoughts({params, body}, res) {
@@ -96,4 +96,4 @@ deleteReaction({params}, res) {
 };
 
 // Export module 
-module.exports = thoughts;
+module.exports = thoughtsfunctions;
