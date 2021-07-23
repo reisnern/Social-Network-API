@@ -12,15 +12,6 @@ app.use(express.static('public'));
 
 app.use(require('./routes'));
 
-// Varible for making text color red in node 
-const redText = '\x1b[31m%s\x1b[0m';
-
-// Vaible for the endpoint, it will log if we can't define the .env var
-const MONGODB_ENDPOINT =
-    process.env.MONGODB_ENDPOINT ||
-    console.log(redText, 'You must have a Mongo Database endpoint.');
-
-
 // Connect mongoose
 mongoose.connect(MONGODB_ENDPOINT, {
     useFindAndModify: false,
