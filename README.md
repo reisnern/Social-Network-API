@@ -1,9 +1,9 @@
 # Social-Network-API
 User Story
+
 AS A social media startup
 I WANT an API for my social network that uses a NoSQL database
 SO THAT my website can handle large amounts of unstructured data
-Acceptance Criteria
 GIVEN a social network API
 WHEN I enter the command to invoke the application
 THEN my server is started and the Mongoose models are synced to the MongoDB database
@@ -13,4 +13,9 @@ WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
 THEN I am able to successfully create, update, and delete users and thoughts in my database
 WHEN I test API POST and DELETE routes in Insomnia Core
 THEN I am able to successfully create and delete reactions to thoughts and ad
+
+Demo Link
+
+https://user-images.githubusercontent.com/77903140/125960823-e1742a95-f6c0-4f29-9f95-ea032c89c215.mp4
+
 

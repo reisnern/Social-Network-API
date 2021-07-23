@@ -12,7 +12,7 @@ app.use(express.static('public'));
 
 app.use(require('./routes'));
 
-// Connect mongoose
+// Configure Mongoose
 mongoose.connect(MONGODB_ENDPOINT, {
     useFindAndModify: false,
     useNewUrlParser: true,

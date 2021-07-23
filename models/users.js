@@ -16,7 +16,7 @@ const usersSchema = new Schema(
             match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/]
             
         },
-        thoughts: [{
+        Thoughts: [{
             type: Schema.Types.ObjectId,
             ref: 'Thoughts'
 

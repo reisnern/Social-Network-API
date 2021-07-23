@@ -18,10 +18,10 @@ const usersController = {
     },
 
     //Get all users
-    getAllusers(req, res) {
+    getUsers(req, res) {
         users.find({})
-        // populate user thoughts
-        .populate({path: 'thoughts', select: '-__v'})
+        // populate user Thoughts
+        .populate({path: 'Thoughts', select: '-__v'})
         // populate user friends
         .populate({path: 'friends', select: '-__v'})
         .select('-__v')
@@ -34,9 +34,9 @@ const usersController = {
     },
 
     // Get user by ID
-    getusersById({params}, res) {
+    getUsersById({params}, res) {
         users.findOne({_id: params.id })
-        .populate({path: 'thoughts', select: '-__v'})
+        .populate({path: 'Thoughts', select: '-__v'})
         .populate({path: 'friends', select: '-__v'})
         .select('-__v')
         // return if no user is found 
@@ -54,7 +54,7 @@ const usersController = {
     },
 
     // Update User by ID
-    updateusers({params, body}, res) {
+    updateUsers({params, body}, res) {
         users.findOneAndUpdate({_id: params.id}, body, {new: true, runValidators: true})
         .then(dbusersData => {
             if(!dbusersData) {
@@ -66,7 +66,7 @@ const usersController = {
         .catch(err => res.json(err))
     },
 
-    deleteusers({params}, res) {
+    deleteUsers({params}, res) {
         users.findOneAndDelete({_id: params.id})
         .then(dbUserData => {
             if(!dbUserData) {

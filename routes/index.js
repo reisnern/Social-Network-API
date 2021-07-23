@@ -1,10 +1,10 @@
-// Require express router
+// For Express router
 const router = require('express').Router();
 
-// Import all of the API routes 
+// Import all routes 
 const apiRoutes = require('./api');
 
-// add prefix of `/api` to all of the api routes
+// Prefix for API
 router.use('/api', apiRoutes);
 
 // 404 Status error message
