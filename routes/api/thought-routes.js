@@ -21,8 +21,6 @@ const {updateThought,
 
 } = require('../../controllers/thoughts-controller');
 
-// } = require('../../controllers/thoughts-controller');
-
 // Delete Thought
 const {deleteThought, 
     
@@ -39,11 +37,10 @@ const {deleteReaction,
 } = require('../../controllers/thoughts-controller');
 
 
-
-// -- Directs to: /api/Thought-routes <GET>
+// -- Direct to: api/zthought-routes <GET>
 router.route('/').get(getThought).post(createThought);
 
-// -- Directs to: /api/Thought-routes/:id <GET, PUT, DELETE>
+// -- Direct to: /api/thought-routes/:id <GET, PUT, DELETE>
 router.route('/:id').get(getThoughtById).delete(deleteThought); 
 
 
