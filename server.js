@@ -13,19 +13,19 @@ app.use(express.static('public'));
 app.use(require('./routes'));
 
 // Configure Mongoose
-mongoose.connect(MONGODB_ENDPOINT, {
+mongoose.connect("mongodb://localhost/socialmedia", {
     useFindAndModify: false,
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
 
-// listen for connection or error events
-mongoose.connection.on('connected', () =>
-    console.log('Connected to MongoDB Endpoint')
+// Connect to mongoose
+mongoose.connection.on('Mongo On', () =>
+    console.log('Connected to MongoDB')
 );
 
 mongoose.connection.on('error', (err) =>
-    console.log(redText, `Mongoose default connection error: ${err}`)
+    console.log(redText, `Error Mongoose not connected': ${err}`)
 );
 
 // Log mongoose queries

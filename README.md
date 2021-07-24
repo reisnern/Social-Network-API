@@ -14,8 +14,3 @@ THEN I am able to successfully create, update, and delete users and thoughts in 
 WHEN I test API POST and DELETE routes in Insomnia Core
 THEN I am able to successfully create and delete reactions to thoughts and ad
 
-Demo Link
-
-https://user-images.githubusercontent.com/77903140/125960823-e1742a95-f6c0-4f29-9f95-ea032c89c215.mp4
-
-

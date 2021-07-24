@@ -44,7 +44,7 @@ const {deleteReaction,
 router.route('/').get(getThought).post(createThought);
 
 // -- Directs to: /api/Thought-routes/:id <GET, PUT, DELETE>
-router.route('/:id').get(getThoughtById).put(updateThought).delete(deleteThought); 
+router.route('/:id').get(getThoughtById).delete(deleteThought); 
 
 
 // -- Directs to: /api/Thought-routes/:ThoughtId/reactions <POST>

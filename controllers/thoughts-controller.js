@@ -1,11 +1,11 @@
 // Require Models
-//const {Thoughts, users} = require('../models');
+const {Thoughts, users} = require('../models');
 
 // Set up Controller
 const Thoughtsfunctions = {
 
     // Create a new Thought
-    createThoughts({params, body}, res) {
+    createThought({params, body}, res) {
         Thoughts.create(body)
         .then(({_id}) => {
             return users.findOneAndUpdate({ _id: params.userId}, {$push: {Thoughts: _id}}, {new: true});
@@ -34,7 +34,7 @@ const Thoughtsfunctions = {
     },
 
   // Get Thought by ID
-  getThoughtsById({params}, res) {
+  getThoughtById({params}, res) {
     Thoughts.findOne({ _id: params.id })
     .populate({path: 'reactions',select: '-__v'})
     .select('-__v')
@@ -52,7 +52,7 @@ const Thoughtsfunctions = {
 },
 
 // Delete Thought by ID
-deleteThoughts({params}, res) {
+deleteThought({params}, res) {
     Thoughts.findOneAndDelete({_id: params.id})
     .then(dbThoughtData => {
         if (!dbThoughtData) {

@@ -5,7 +5,7 @@ const {users} = require('../models');
 const usersController = {
     
     // Create new User
-    createusers({body}, res) {
+    createUsers({body}, res) {
         users.create(body)
         .then((dbUserData) => {
             res.json(dbUserData)
@@ -111,4 +111,4 @@ deleteFriend({ params }, res) {
 };
 
 // Export users controller
-module.exports = users; 
+module.exports = usersController; 
