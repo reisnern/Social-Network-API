@@ -21,6 +21,11 @@ const {
       updateUsers,
   } = require('../../controllers/users-controller');
 
+// Delete Users
+const {
+  deleteUsers,
+} = require('../../controllers/users-controller');
+
 // Add Friend
 const {
       addFriend,
@@ -31,7 +36,6 @@ const {
       deleteFriend,
   } = require('../../controllers/users-controller');
 
-            c
 // -- Directs to: /api/users <GET, POST>
 router.route('/').get(getUsers).post(createUsers);
 

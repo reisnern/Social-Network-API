@@ -1,4 +1,4 @@
-// Require express and mongoose
+// Express and mongoose requirements
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
