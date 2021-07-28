@@ -8,6 +8,7 @@ const usersController = {
     createUsers({body}, res) {
         users.create(body)
         .then((dbUserData) => {
+            console.log("-----------------")
             res.json(dbUserData)
         })
         .catch ((err) => {
@@ -35,6 +36,7 @@ const usersController = {
 
     // Get user by ID
     getUsersById({params}, res) {
+        console.log(params.id)
         users.findOne({_id: params.id })
         .populate({path: 'Thoughts', select: '-__v'})
         .populate({path: 'friends', select: '-__v'})
@@ -67,7 +69,8 @@ const usersController = {
     },
 
     deleteUsers({params}, res) {
-        users.findOneAndDelete({_id: params.id})
+        const myID = params.id.slice(1)
+        users.findOneAndDelete({_id: myID})
         .then(dbUserData => {
             if(!dbUserData) {
                 res.status(404).json({message: 'No User with exists with this ID!'});
@@ -80,7 +83,9 @@ const usersController = {
 
 // Delete user by ID
 addFriend({params}, res) {
-    users.findOneAndUpdate({_id: params.id}, {$push: { friends: params.friendId}}, {new: true})
+    const myID = params.id.slice(1)
+    const friendID = params.friendId.slice(1)
+    users.findOneAndUpdate({_id: myID}, {$push: { friends: friendID}}, {new: true})
     .populate({path: 'friends', select: ('-__v')})
     .select('-__v')
     .then(dbUserData => {

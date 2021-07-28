@@ -12,4 +12,4 @@ router.use('/users', usersRoutes);
 router.use('thoughts', thoughtsRoutes);
 
 // Export Module Router
-module.exports = router;
+module.exports = router; 
