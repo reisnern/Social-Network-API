@@ -16,10 +16,10 @@ const {createThought,
     
 } = require('../../controllers/thoughts-controller');
 
-// Update Thought
-const {updateThought, 
+// // Update Thought
+// const {updateThought, 
 
-} = require('../../controllers/thoughts-controller');
+// } = require('../../controllers/thoughts-controller');
 
 // Delete Thought
 const {deleteThought, 
