@@ -30,6 +30,19 @@ const Thoughtsfunctions = {
     .catch(err => res.json(err));    
     },
 
+// Update Thought by ID
+updateThought({params, body}, res) {
+    thoughts.findOneAndUpdate({_id: params.id}, body, {new: true, runValidators: true})
+    .then(dbThoughtData => {
+        if(!dbThoughtData) {
+            res.status(404).json({message: 'No Thoughts found with this ID!'});
+            return;
+        }
+        res.json(dbThoughtData);
+    })
+    .catch(err => res.json(err))
+},
+
 // Delete Thought by ID
 deleteThought({params}, res) {
     thoughts.findOneAndDelete({_id: params.id})

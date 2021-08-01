@@ -16,10 +16,10 @@ const {createThought,
     
 } = require('../../controllers/thoughts-controller');
 
-// // Update Thought
-// const {updateThought, 
+// Update Thought
+const {updateThought, 
 
-// } = require('../../controllers/thoughts-controller');
+} = require('../../controllers/thoughts-controller');
 
 // Delete Thought
 const {deleteThought, 
@@ -37,12 +37,11 @@ const {deleteReaction,
 } = require('../../controllers/thoughts-controller');
 
 
-// Get all thoughts Create Thought
+// Get all thoughts, Create Thought
 router.route('/').get(getThought).post(createThought);
 
-// Get thought by id delete thought
-router.route('/:id').get(getThoughtById).delete(deleteThought); 
-
+// Get thought by id, update thought, delete thought
+router.route('/:id').get(getThoughtById).put(updateThought).delete(deleteThought); 
 
 // Add Reaction
 router.route('/:ThoughtId/reactions').post(addReaction);
