@@ -1,29 +1,17 @@
 // Require Models
-const {users, thoughts} = require('../models');
+const {thoughts} = require('../models');
 
 // Set up Controller
 const Thoughtsfunctions = {
 
     //create thought
-    createThought({ params, body }, res) {
+    createThought({body}, res) {
         thoughts.create(body)
-        .then(({ _id }) => {
-            return users.findOneAndUpdate(
-                { _id: params.userId },
-                { $push: { thoughts: _id } },
-                { new: true }
-            );
-        })
-        .then(dbThoughtData => {
-            if(!dbThoughtData) {
-                res.status(404).json({ message: 'No user thought found with this id' });
-                return;
-            }
-            res.json(dbThoughtData);
+        .then((dbThoughtData) => {
+            res.json(dbThoughtData)
         })
         .catch(err => res.json(err));
     },
-
     // Get Thoughts
     getThought(req,res) {
         thoughts.find({})
@@ -36,7 +24,8 @@ const Thoughtsfunctions = {
 
   // Get Thought by ID
   getThoughtById({params}, res) {
-    thoughts.findOne({ _id: params.thought.id })
+    const myID = params.id.slice(1)  
+    thoughts.findOne({ _id: myID })
     .then(dbThoughtData => res.json(dbThoughtData))
     .catch(err => res.json(err));    
     },

@@ -37,17 +37,17 @@ const {deleteReaction,
 } = require('../../controllers/thoughts-controller');
 
 
-// -- Direct to: api/zthought-routes <GET>
+// Get all thoughts Create Thought
 router.route('/').get(getThought).post(createThought);
 
-// -- Direct to: /api/thought-routes/:id <GET, PUT, DELETE>
+// Get thought by id delete thought
 router.route('/:id').get(getThoughtById).delete(deleteThought); 
 
 
-// -- Directs to: /api/Thought-routes/:ThoughtId/reactions <POST>
+// Add Reaction
 router.route('/:ThoughtId/reactions').post(addReaction);
 
-// -- Directs to: /api/Thought-routes/:ThoughtId/reactionId <DELETE>
+// Delete Reaction
 router.route('/:ThoughtId/reactions/:reactionId').delete(deleteReaction);
 
 // Export module router
