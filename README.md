@@ -12,5 +12,7 @@ THEN the data for each of these routes is displayed in a formatted JSON
 WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
 THEN I am able to successfully create, update, and delete users and thoughts in my database
 WHEN I test API POST and DELETE routes in Insomnia Core
-THEN I am able to successfully create and delete reactions to thoughts and ad
+THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
 
+Demo Video: 
+https://drive.google.com/file/d/1RwUQjnS3DPctbcaNO0RblDl5NYF54-5c/view?usp=sharing
